@@ -1,4 +1,6 @@
+<%= turbo_stream_from @comments%>
 <div id="<%= dom_id(comment) %>">
-  <%= comment.content %>
+  content: <%= comment.content %>
   - <%= time_tag comment.created_at, "data-local": "time-ago" %>
+  <%= button_to "Delete", @comments, method: :delete %>
 </div>
